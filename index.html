@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    
+    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+    <link rel="stylesheet" href="kityminder.online.css?_=522ee4a6b2f6642c"/>
+    
+</head>
+<body ng-app="kityminder" ng-controller="MainController">
+<editor-head></editor-head>
+<kityminder-editor on-init="initEditor(editor, minder)"></kityminder-editor>
+<main-menu></main-menu>
+</body>
+
+<script src="kityminder.online.js?_=9a54af5d68f46211"></script>
+<script>
+    angular.module('kityminder')
+        .controller('MainController', ['$scope', 'valueTransfer', function($scope, valueTransfer) {
+            valueTransfer.role = 'editor';
+
+            $scope.initEditor = function(editor, minder) {
+                window.editor = editor;
+                window.minder = minder;
+            };
+        }]);
+
+</script>
+
+</html>
